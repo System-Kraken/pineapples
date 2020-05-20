@@ -15,5 +15,5 @@ jobs:
         env:
             PR_NUM: ${{ github.event.pull_request.number }}
         with:
-          comment: "PR Instance at ${PR_NUM}-pr.pineapples.dev"
+          comment: "PR Instance at $PR_NUM-pr.pineapples.dev"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
