@@ -1,0 +1,17 @@
+
+name: PR Url
+
+on:
+  pull_request:
+    types: [opened, reopened]
+
+
+jobs:
+  pr-instance:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: JoseThen/comment-pr@v1
+      env:
+          PR_NUM: ${{ github.event.pull_request.number }}
+      with:
+        comment:"PR Instance at ${PR_NUM}-pr.pineapples.dev"
