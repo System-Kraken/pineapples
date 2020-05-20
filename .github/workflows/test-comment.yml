@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: comment-pr
-        uses: JoseThen/pr-comment@v1
+        uses: JoseThen/comment-pr@master
         env:
             PR_NUM: ${{ github.event.pull_request.number }}
         with:
