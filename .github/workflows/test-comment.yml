@@ -10,8 +10,9 @@ jobs:
   pr-instance:
     runs-on: ubuntu-latest
     steps:
-    - uses: JoseThen/comment-pr@master
-      env:
-          PR_NUM: ${{ github.event.pull_request.number }}
-      with:
-        comment: "PR Instance at ${PR_NUM}-pr.pineapples.dev"
+      - name: comment-pr
+        uses: JoseThen/pr-comment@v1
+        env:
+            PR_NUM: ${{ github.event.pull_request.number }}
+        with:
+          comment: "PR Instance at ${PR_NUM}-pr.pineapples.dev"
