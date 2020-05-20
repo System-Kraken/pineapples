@@ -13,5 +13,5 @@ jobs:
       - name: comment-pr
         uses: JoseThen/comment-pr@master
         with:
-          comment: "PR Instance at ${{ github.event.pull_request.number }}-pr.pineapples.dev"
+          comment: "PR Instance at `https://${{ github.event.pull_request.number }}-pr.pineapples.dev`"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
