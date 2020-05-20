@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: comment-pr
         uses: JoseThen/comment-pr@master
-        env:
-            PR_NUM: ${{ github.event.pull_request.number }}
         with:
-          comment: "PR Instance at $PR_NUM-pr.pineapples.dev"
+          comment: "PR Instance at ${{ github.event.pull_request.number }}-pr.pineapples.dev"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
