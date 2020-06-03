@@ -13,6 +13,8 @@ jobs:
       - name: test
         run: |
           echo ${{ github.event.pull_request }}
+          printf ${{ github.event.pull_request }}
+          echo $GITHUB_ACTION
       - name: comment-pr
         uses: JoseThen/comment-pr@master
         with:
