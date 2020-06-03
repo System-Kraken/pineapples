@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: test
         run: |
-          echo ${{ github.event.pull_request }}
-          printf ${{ github.event.pull_request }}
+          echo ${{ github.event.pull_request.number }}
+          echo ${{ github.event.pull_request.action }}
           cat $GITHUB_EVENT_PATH
       - name: comment-pr
         uses: JoseThen/comment-pr@master
