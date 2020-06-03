@@ -13,8 +13,11 @@ jobs:
       - name: test
         run: |
           echo ${{ github.event.pull_request.number }}
-          echo ${{ github.event.pull_request.action }}
-          cat $GITHUB_EVENT_PATH
+          echo ${{ github.event.action }}
+          echo ${{ github.event_name }}
+          echo ${{ github.repository }}
+          echo ${{ github.head_ref }}
+          echo ${{ github.event}}
       - name: comment-pr
         uses: JoseThen/comment-pr@master
         with:
