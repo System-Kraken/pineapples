@@ -10,6 +10,9 @@ jobs:
   pr-instance:
     runs-on: ubuntu-latest
     steps:
+      - name: test
+        run: |
+          echo ${{ github.event.pull_request }}
       - name: comment-pr
         uses: JoseThen/comment-pr@master
         with:
