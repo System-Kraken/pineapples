@@ -14,7 +14,7 @@ jobs:
         run: |
           echo ${{ github.event.pull_request }}
           printf ${{ github.event.pull_request }}
-          echo $GITHUB_ACTION
+          cat $GITHUB_EVENT_PATH
       - name: comment-pr
         uses: JoseThen/comment-pr@master
         with:
