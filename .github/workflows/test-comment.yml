@@ -26,6 +26,7 @@ jobs:
         
   comment:
     runs-on: ubuntu-latest
+    if: success() && (github.event_name == 'opened' || github.event_name == 'reopened')
     steps:
       - uses: actions/github-script@v2
         with:
