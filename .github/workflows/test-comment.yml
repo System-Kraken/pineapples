@@ -1,9 +1,12 @@
 
 name: PR Url
+env:
+  REPO_NAME: ${{ github.event.pull_request.base.name }}
 
 on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
+
 
 
 jobs:
