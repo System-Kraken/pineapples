@@ -13,14 +13,16 @@ jobs:
       - run: echo ::set-env name=REPO_NAME::${{ github.repository.name }}
       - name: test
         run: |
-          echo ${{ github.event.pull_request.number }}
-          echo ${{ github.event.action }}
-          echo ${{ github.event_name }}
-          echo ${{ github.repository }}
-          echo ${{ github.head_ref }}
-          echo ${{ github.pull_request.base.repo.name }}
-          echo $REPO_NAME
-          echo ${{ github.repository }}
+          echo Github-Pull_Request-Number: ${{ github.event.pull_request.number }}
+          echo Github-Event-Action: ${{ github.event.action }}
+          echo Github-Event_name: ${{ github.event_name }}
+          echo Github-Repository: ${{ github.repository }}
+          echo Github-Head_ref: ${{ github.head_ref }}
+          echo Github-Pull_Request-Base-Repo-Name ${{ github.pull_request.base.repo.name }}
+          echo Repo_Name: $REPO_NAME
+          echo Github-Repository: ${{ github.repository }}
+          echo Finished Now
+
       - name: Dump github context
         run:   echo "$GITHUB_CONTEXT"
         shell: bash
