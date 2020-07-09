@@ -1,7 +1,5 @@
 
 name: PR Url
-env:
-  REPO_NAME: ${{ github.event.pull_request.base.name }}
 
 on:
   pull_request:
@@ -12,6 +10,8 @@ on:
 jobs:
   pr-instance:
     runs-on: ubuntu-latest
+    env:
+      REPO_NAME: ${{ github.event.pull_request.base.name }}
     steps:
       - name: test
         run: |
