@@ -13,7 +13,6 @@ jobs:
   pr-instance:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ::set-env name=REPO_NAME::${{ github.repository.name }}
       - name: test
         run: |
           echo github.event.pull_request.number: ${{ github.event.pull_request.number }}
