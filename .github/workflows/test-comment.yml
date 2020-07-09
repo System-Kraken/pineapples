@@ -18,7 +18,7 @@ jobs:
           echo ${{ github.event_name }}
           echo ${{ github.repository }}
           echo ${{ github.head_ref }}
-          echo ${{ github.repository.name }}
+          echo ${{ github.pull_request.base.repo.name }}
           echo $REPO_NAME
           echo ${{ github.repository }}
       - name: Dump github context
