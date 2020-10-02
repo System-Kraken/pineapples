@@ -13,13 +13,25 @@ on:
         description: 'Body field for the release tag'
 
 jobs:
-  Parse:
+  Deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Master Image
-      run: echo "Image ${{ github.event.inputs.master_image }}"
-    - name: Release Tag
-      run: echo "Tag ${{ github.event.inputs.release_tag }}"
-    - name: Release Body
-      run: echo "Body ${{ github.event.inputs.release_body }}"
+    - name: Parse Inputs
+      run: |
+        echo "Image ${{ github.event.inputs.master_image }}"
+        echo "Tag ${{ github.event.inputs.release_tag }}"
+        echo "Body ${{ github.event.inputs.release_body }}"
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ github.event.inputs.release_tag }}
+        release_name: Release ${{ github.event.inputs.release_tag }}
+        body: |
+          ${{ github.event.inputs.release_body }}
+        draft: false
+        prerelease: false
+      
       
