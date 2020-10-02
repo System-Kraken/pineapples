@@ -35,5 +35,5 @@ jobs:
     - name: Send greeting
       run: |
         echo "Hello ${{ github.event.inputs.name }}"
-        echo "${{ steps.parse.outputs.test_account }}
-        echo "${{ steps.parse.outputs.prod_acount }}
+        echo "${{ steps.parse.outputs.test_account }}"
+        echo "${{ steps.parse.outputs.prod_acount }}"
