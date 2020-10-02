@@ -10,7 +10,7 @@ on:
         description: 'Release Tag:'
       release_title:
         required: true
-        description: 'Release Tag:'
+        description: 'Release Title:'
       release_body:
         required: false
         description: 'Release Body:'
