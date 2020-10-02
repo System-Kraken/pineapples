@@ -17,9 +17,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Master Image
-      run: echo "Image: ${{ github.event.inputs.master_image }}"
+      run: echo "Image ${{ github.event.inputs.master_image }}"
     - name: Release Tag
-      run: echo "Tag: ${{ github.event.inputs.release_tag }}"
+      run: echo "Tag ${{ github.event.inputs.release_tag }}"
     - name: Release Body
-      run: echo "Body: ${{ github.event.inputs.release_body }}"
+      run: echo "Body ${{ github.event.inputs.release_body }}"
       
