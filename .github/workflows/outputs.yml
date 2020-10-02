@@ -29,8 +29,8 @@ jobs:
     - name: Set Outputs
       id: parse
       run: |
-        echo "##[set-output name=test_account;]$(cat deploy.json | jq .'test)"
-        echo "##[set-output name=prod_account;]$(cat deploy.json | jq .'production)"
+        echo "##[set-output name=test_account;]$(cat deploy.json | jq .'test')"
+        echo "##[set-output name=prod_account;]$(cat deploy.json | jq .'production')"
     # Runs a single command using the runners shell
     - name: Send greeting
       run: |
