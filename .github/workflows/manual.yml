@@ -20,7 +20,7 @@ jobs:
       run: |
         echo "Image ${{ github.event.inputs.master_image }}"
         echo "Tag ${{ github.event.inputs.release_tag }}"
-        echo "Body ${{ github.event.inputs.release_body }}"
+        printf "Body ${{ github.event.inputs.release_body }}"
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Create Release
