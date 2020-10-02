@@ -20,6 +20,22 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
+  greet:name: Production Deploy
+on:
+  workflow_dispatch:
+    inputs:
+      master-image:
+        required: true
+        description: 'The full master image needed to deploy to production'
+      release-tag:
+        required: true
+        description: tag to release for this deploy
+      release-body:
+        required: false
+        description: 'Body field for the release tag'
+
+jobs:
+  # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -27,5 +43,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: Master Image
+      run: echo "Image: ${{ github.event.inputs.master-image }}"
+    - name: Release Tag
+      run: echo "Image: ${{ github.event.inputs.release-tag }}"
+    - name: Release Body
+      run: echo "Image: ${{ github.event.inputs.release-body }}"
+      
