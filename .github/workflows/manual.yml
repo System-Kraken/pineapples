@@ -24,13 +24,13 @@ jobs:
 on:
   workflow_dispatch:
     inputs:
-      master-image:
+      master_image:
         required: true
         description: 'The full master image needed to deploy to production'
-      release-tag:
+      release_tag:
         required: true
         description: tag to release for this deploy
-      release-body:
+      release_body:
         required: false
         description: 'Body field for the release tag'
 
@@ -44,9 +44,9 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Master Image
-      run: echo "Image: ${{ github.event.inputs.master-image }}"
+      run: echo "Image: ${{ github.event.inputs.master_image }}"
     - name: Release Tag
-      run: echo "Image: ${{ github.event.inputs.release-tag }}"
+      run: echo "Tag: ${{ github.event.inputs.release_tag }}"
     - name: Release Body
-      run: echo "Image: ${{ github.event.inputs.release-body }}"
+      run: echo "Body: ${{ github.event.inputs.release_body }}"
       
