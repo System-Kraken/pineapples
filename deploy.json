@@ -1,0 +1,4 @@
+{
+  "test": "TEST_ACCOUNT_ID",
+  "production": "PROD_ACCOUNT_ID"
+}
